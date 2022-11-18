@@ -26,33 +26,165 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        Background = new javax.swing.JPanel();
+        lblNombreRestaurante = new javax.swing.JLabel();
+        lblTelefono = new javax.swing.JLabel();
+        lblDireccion = new javax.swing.JLabel();
+        lblHora = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblMesero = new javax.swing.JLabel();
+        lblMesa = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblRecibo = new javax.swing.JTable();
+        lblTotal = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        lblSubtotal = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        lblFormaPago = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Recibo Restauraunte");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setForeground(new java.awt.Color(0, 0, 204));
+        Background.setBackground(new java.awt.Color(255, 255, 255));
+        Background.setForeground(new java.awt.Color(0, 0, 204));
+        Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 832, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 633, Short.MAX_VALUE)
-        );
+        lblNombreRestaurante.setFont(new java.awt.Font("Roboto", 0, 28)); // NOI18N
+        lblNombreRestaurante.setForeground(new java.awt.Color(0, 0, 0));
+        lblNombreRestaurante.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNombreRestaurante.setText("Nombre del restaurante");
+        Background.add(lblNombreRestaurante, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 380, 30));
+
+        lblTelefono.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        lblTelefono.setForeground(new java.awt.Color(0, 0, 0));
+        lblTelefono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTelefono.setText("Telefono");
+        Background.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 320, 30));
+
+        lblDireccion.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        lblDireccion.setForeground(new java.awt.Color(0, 0, 0));
+        lblDireccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDireccion.setText("Direccion");
+        Background.add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 320, 30));
+
+        lblHora.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        lblHora.setForeground(new java.awt.Color(0, 0, 0));
+        Background.add(lblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 80, 20));
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Hora:");
+        Background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 40, 20));
+
+        lblFecha.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        lblFecha.setForeground(new java.awt.Color(0, 0, 0));
+        Background.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 80, 20));
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Fecha:");
+        Background.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 50, 20));
+
+        lblMesero.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        lblMesero.setForeground(new java.awt.Color(0, 0, 0));
+        Background.add(lblMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 130, 30));
+
+        lblMesa.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        lblMesa.setForeground(new java.awt.Color(0, 0, 0));
+        Background.add(lblMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 60, 30));
+
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Mesero:");
+        Background.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 60, 30));
+
+        jLabel6.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Mesa:");
+        Background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 60, 30));
+
+        tblRecibo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Cantidad", "Descripcion", "V. Unitario", "V. Total"
+            }
+        ));
+        jScrollPane1.setViewportView(tblRecibo);
+        if (tblRecibo.getColumnModel().getColumnCount() > 0) {
+            tblRecibo.getColumnModel().getColumn(0).setMaxWidth(75);
+            tblRecibo.getColumnModel().getColumn(2).setMaxWidth(75);
+            tblRecibo.getColumnModel().getColumn(3).setMaxWidth(75);
+        }
+
+        Background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 380, 180));
+
+        lblTotal.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        lblTotal.setForeground(new java.awt.Color(0, 0, 0));
+        Background.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 550, 100, 30));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel4.setText("TOTAL:");
+        Background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, 100, 30));
+
+        jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel7.setText("SUBTOTAL:");
+        Background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 100, 30));
+
+        lblSubtotal.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        lblSubtotal.setForeground(new java.awt.Color(0, 0, 0));
+        Background.add(lblSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 510, 100, 30));
+
+        jLabel1.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("GRACIAS POR SU VISITA");
+        Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, 240, -1));
+
+        lblFormaPago.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lblFormaPago.setForeground(new java.awt.Color(0, 0, 0));
+        Background.add(lblFormaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 600, 100, 20));
+
+        jLabel9.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Forma de pago:");
+        Background.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, 100, -1));
+
+        jLabel8.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Seleccionar Recibo");
+        Background.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
+
+        jButton1.setText("Seleccionar...");
+        Background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -94,6 +226,28 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel Background;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblDireccion;
+    private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblFormaPago;
+    private javax.swing.JLabel lblHora;
+    private javax.swing.JLabel lblMesa;
+    private javax.swing.JLabel lblMesero;
+    private javax.swing.JLabel lblNombreRestaurante;
+    private javax.swing.JLabel lblSubtotal;
+    private javax.swing.JLabel lblTelefono;
+    private javax.swing.JLabel lblTotal;
+    private javax.swing.JTable tblRecibo;
     // End of variables declaration//GEN-END:variables
 }
