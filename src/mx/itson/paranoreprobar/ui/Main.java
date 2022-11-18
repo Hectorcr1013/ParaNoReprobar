@@ -4,6 +4,18 @@
  */
 package mx.itson.paranoreprobar.ui;
 
+import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.text.DateFormat;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+import javax.swing.JFileChooser;
+import javax.swing.table.DefaultTableModel;
+import mx.itson.paranoreprobar.entidades.*;
+import mx.itson.paranoreprobar.enumeradores.FormaPago;
+
 /**
  *
  * @author chiqu
@@ -172,6 +184,11 @@ public class Main extends javax.swing.JFrame {
         Background.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
 
         jButton1.setText("Seleccionar...");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         Background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -189,6 +206,60 @@ public class Main extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        try{
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+            
+            if(fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
+                File archivo = fileChooser.getSelectedFile();
+                
+                byte archivoBytes[] = Files.readAllBytes(archivo.toPath());
+                
+                String contenido = new String(archivoBytes,StandardCharsets.UTF_8);
+                
+                Recibo recibo = new Recibo().deserializar(contenido);
+                
+                Locale local = new Locale("es", "MX");
+                NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(local);
+                
+                DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy"); 
+                DateFormat formatoHora = new SimpleDateFormat("H:metro:s");
+                
+                lblDireccion.setText(recibo.getRestaurante().getDireccion());
+                lblTelefono.setText(recibo.getRestaurante().getTelefono());
+                lblFecha.setText(formatoFecha.format(recibo.getFecha()));
+                lblHora.setText(formatoHora.format(recibo.getHora()));
+                if (recibo.getFormaPago() == FormaPago.EFECTIVO) {
+                    lblFormaPago.setText("Efectivo");
+                }else{
+                    lblFormaPago.setText("Tarjeta");
+                }
+                lblMesa.setText(Integer.toString(recibo.getRestaurante().getMesa()));
+                lblMesero.setText(recibo.getRestaurante().getMesero());
+                lblNombreRestaurante.setText(recibo.getRestaurante().getNombre());
+                
+                
+                DefaultTableModel modelo1 = (DefaultTableModel) tblRecibo.getModel();
+                modelo1.setRowCount(0);
+                
+                for(Compra c : recibo.getCompra()){
+                    modelo1.addRow(new Object[] {
+                        c.getCantidad(),
+                        c.getDescripcion(), 
+                        formatoMoneda.format(c.getVUnitario()), 
+                        formatoMoneda.format(c.getVTotal())});
+                    }
+                
+                }
+            }catch(Exception ex){
+            System.err.println("Ocurrio un error: " + ex.getMessage());
+            
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
