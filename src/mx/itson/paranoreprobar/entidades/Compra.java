@@ -12,9 +12,24 @@ public class Compra {
     
     private int cantidad;
     private String descripcion;
-    private Double VUnitario;
-    private Double VTotal;
+    private Double vUnitario;
+    private Double vTotal;
+    
+    
+    /**
+     * @return the vTotal
+     */
+    public Double getvTotal() {
+        vTotal = this.cantidad * this.vUnitario;
+        return vTotal;
+    }
 
+    /**
+     * @param vTotal the vTotal to set
+     */
+    public void setvTotal(Double vTotal) {
+        this.vTotal = vTotal;
+    }
     /**
      * @return the cantidad
      */
@@ -46,29 +61,16 @@ public class Compra {
     /**
      * @return the VUnitario
      */
-    public Double getVUnitario() {
-        return VUnitario;
+    public Double getvUnitario() {
+        return vUnitario;
     }
 
     /**
      * @param VUnitario the VUnitario to set
      */
-    public void setVUnitario(Double VUnitario) {
-        this.VUnitario = VUnitario;
+    public void setvUnitario(Double VUnitario) {
+        this.vUnitario = VUnitario;
     }
 
-    /**
-     * @return the VTotal
-     */
-    public Double getVTotal() {
-        return VTotal;
-    }
-
-    /**
-     * @param VTotal the VTotal to set
-     */
-    public void setVTotal(Double VTotal) {
-        this.VTotal = VTotal;
-    }
     
 }

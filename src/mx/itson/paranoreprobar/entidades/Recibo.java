@@ -22,6 +22,38 @@ public class Recibo {
     private List<Compra> compra;
     private Restaurante restaurante;
 
+    
+    public Recibo deserializar(String json){
+        Recibo recibo = new Recibo();
+        try{
+            recibo = new Gson().fromJson(json, Recibo.class);
+        } catch(Exception ex){
+            System.err.println("Ocurrio un error: " + ex.getMessage());
+        }
+        return recibo;
+    }
+
+    /**
+     * @param formaPago the formaPago to set
+     */
+    public void setFormaPago(FormaPago formaPago) {
+        this.formaPago = formaPago;
+    }
+
+    /**
+     * @param compra the compra to set
+     */
+    public void setCompra(List<Compra> compra) {
+        this.compra = compra;
+    }
+
+    /**
+     * @param restaurante the restaurante to set
+     */
+    public void setRestaurante(Restaurante restaurante) {
+        this.restaurante = restaurante;
+    }
+    
     /**
      * @return the hora
      */
@@ -69,17 +101,4 @@ public class Recibo {
     public Restaurante getRestaurante() {
         return restaurante;
     }
-    
-    public Recibo deserializar(String json){
-        Recibo recibo = new Recibo();
-        try{
-            recibo = new Gson().fromJson(json, Recibo.class);
-        } catch(Exception ex){
-            System.err.println("Ocurrio un error: " + ex.getMessage());
-        }
-        return recibo;
-    }
-
-    
-    
 }

@@ -19,7 +19,7 @@ import mx.itson.paranoreprobar.enumeradores.FormaPago;
 
 /**
  *
- * @author chiqu
+ * @author Hector
  */
 public class Main extends javax.swing.JFrame {
 
@@ -326,11 +326,13 @@ public class Main extends javax.swing.JFrame {
     private void lblExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExitMouseEntered
        
         btnExit.setBackground(Color.red);
+        lblExit.setForeground(Color.white);
         
     }//GEN-LAST:event_lblExitMouseEntered
 
     private void lblExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExitMouseExited
         btnExit.setBackground(Color.white);
+        lblExit.setForeground(Color.black);
     }//GEN-LAST:event_lblExitMouseExited
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
@@ -351,7 +353,9 @@ public class Main extends javax.swing.JFrame {
                 NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(local);
                 
                 DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy"); 
-                DateFormat formatoHora = new SimpleDateFormat("H:metro:s");
+                DateFormat formatoHora = new SimpleDateFormat("hh:mm:ss a");
+                
+                int VTotal = 0;
                 
                 lblDireccion.setText(recibo.getRestaurante().getDireccion());
                 lblTelefono.setText(recibo.getRestaurante().getTelefono());
@@ -374,8 +378,8 @@ public class Main extends javax.swing.JFrame {
                     modelo1.addRow(new Object[] {
                         c.getCantidad(),
                         c.getDescripcion().toUpperCase(), //Aqui usamos el uppercase
-                        formatoMoneda.format(c.getVUnitario()), 
-                        formatoMoneda.format(c.getVTotal())});
+                        formatoMoneda.format(c.getvUnitario()), 
+                        formatoMoneda.format(c.getvTotal())});
                     }
                 
                 }
