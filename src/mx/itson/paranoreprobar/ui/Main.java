@@ -169,7 +169,7 @@ public class Main extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel7.setText("SUBTOTAL:");
-        Background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, 100, 30));
+        Background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, 110, 30));
 
         lblSubtotal.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         lblSubtotal.setForeground(new java.awt.Color(0, 0, 0));
@@ -188,12 +188,12 @@ public class Main extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Forma de pago:");
-        Background.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 100, -1));
+        Background.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 110, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Seleccionar Recibo");
-        Background.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
+        Background.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(128, 190, 231));
         jPanel1.setForeground(new java.awt.Color(87, 170, 255));
@@ -366,7 +366,7 @@ public class Main extends javax.swing.JFrame {
                 }else{
                     lblFormaPago.setText("Tarjeta");
                 }
-                lblMesa.setText(Integer.toString(recibo.getRestaurante().getMesa()));
+                lblMesa.setText("#"+Integer.toString(recibo.getRestaurante().getMesa()));
                 lblMesero.setText(recibo.getRestaurante().getMesero());
                 lblNombreRestaurante.setText(recibo.getRestaurante().getNombre());
                 
@@ -381,7 +381,7 @@ public class Main extends javax.swing.JFrame {
                         formatoMoneda.format(c.getvUnitario()), 
                         formatoMoneda.format(c.getvTotal())});
                     }
-                
+                System.out.println(contenido);
                 }
             }catch(Exception ex){
             System.err.println("Ocurrio un error: " + ex.getMessage());
